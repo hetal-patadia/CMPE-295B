@@ -13,7 +13,7 @@ public class DbOperation {
 	private static final String userName = "root";
 	private static final String password = "root";
 	
-	private static Connection getDBConnection() {
+	protected static Connection getDBConnection() {
 		Connection conn = null;
 		try {
 			Class.forName(driver).newInstance();
@@ -27,11 +27,11 @@ public class DbOperation {
 		return conn;
 	}
 	
-	public static int insertRecordIntoUserTable(String firstname, String lastname, String email_id, String username, String password) throws SQLException {
+	public static int insertRecordIntoUserTable(String firstname, String lastname, String email_id, String username, String password, String domain1, String domain2, String domain3) throws SQLException {
 		Connection conn = null;
 		Statement st = null;
 		int val = 0;
-		String insertData = "INSERT into user_profile (firstname, lastname, email_id, username, password) VALUES('" + firstname + "','" + lastname + "','" + email_id + "','" + username + "','" + password + "')";
+		String insertData = "INSERT into user_profile (firstname, lastname, email_id, username, password, interest1, interest2, interest3) VALUES('" + firstname + "','" + lastname + "','" + email_id + "','" + username + "','" + password +  "','" + domain1 +  "','" + domain2 +  "','" + domain3 + "')";
 		try{
 			conn = getDBConnection();
 			st = conn.createStatement();
@@ -124,6 +124,36 @@ public class DbOperation {
 			}
  
 		}
+	}
+		
+		
+		static void insertRecordIntoTopicTable(String topic_name) throws SQLException {
+			Connection conn = null;
+			Statement st = null;
+			String insertData = "INSERT into topics (topic_name) VALUES('" + topic_name + "')";
+			try{
+				conn = getDBConnection();
+				st = conn.createStatement();
+				// execute insert SQL statement
+				int val = st.executeUpdate(insertData);
+				
+			}
+			catch (SQLException e) {
+				 
+				System.out.println(e.getMessage());
+	 
+			} finally {
+	 
+				if (st != null) {
+					st.close();
+				}
+	 
+				if (conn != null) {
+					conn.close();
+				}
+	 
+			}
+
 	}
 	
 	private static void showRecordFromConfTable() throws SQLException {
