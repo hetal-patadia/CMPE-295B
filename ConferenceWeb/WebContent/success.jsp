@@ -14,8 +14,38 @@
 You are not logged in<br/>
 <a href="index.jsp">Please Login</a>
 <%} else {
+
+    String user = request.getParameter("search");
 %>
-Welcome <%=session.getAttribute("userid")%><br/><br/>
+Welcome <%=session.getAttribute("userid")%><br/><br/><br/>
+
+<form method="post" action="success.jsp">
+<table width="30%" cellpadding="5">
+                <thead>
+                    <tr>
+                        <th colspan="2">Search for conferences</th>
+                    </tr>
+                </thead>
+                <tbody>
+                	<tr>
+                	<td>
+                	<input type="text" name="search" value="" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                	<input type="submit" value="Search" />
+                	</td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    </form>
+
+<%
+if (user != null)
+	{
+	%>
+	<%= user %>
+	<%} %>
+<br/>
+<br/>
+<br/>
 <a href='logout.jsp'>Log out</a>
 <%
     }
