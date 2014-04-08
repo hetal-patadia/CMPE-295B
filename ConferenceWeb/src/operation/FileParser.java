@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class FileParser {
 	
 	//Source file to read data from.
-	private static String dataFileName = "C:/Users/VAHBHP/Desktop/MSSE/4th Sem/CMPE 295B/Implementation/conferences.txt";
+	private static String dataFileName = "C:/Users/VAHBHP/git/LocalConferenceRepo/ConferenceWeb/Files/latest conferences.txt";
 	
 	/**
 	 * @param args
