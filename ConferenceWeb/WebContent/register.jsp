@@ -7,7 +7,7 @@
     	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/conference_search",
                 "root", "root");
     	        Statement st = conn.createStatement() ;
-    	        rs =st.executeQuery("select topic_name from topics limit 20") ;
+    	        rs =st.executeQuery("select topic_name from topics order by occurence desc limit 50") ;
     
     %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -72,7 +72,7 @@
                         <td>Select domain of interest-2</td>
                         <td>
                         <select name="domain2">
-        <%  rs =st.executeQuery("select topic_name from topics limit 20") ;
+        <%  rs =st.executeQuery("select topic_name from topics order by occurence desc limit 50") ;
         while(rs.next()){ %>
             <option><%= rs.getString(1)%></option>
         <% } %>
@@ -83,7 +83,7 @@
                         <td>Select domain of interest-3</td>
                         <td>
                         <select name="domain3">
-        <%  rs =st.executeQuery("select topic_name from topics limit 20") ;
+        <%  rs =st.executeQuery("select topic_name from topics order by occurence desc limit 50") ;
         while(rs.next()){ %>
             <option><%= rs.getString(1)%></option>
         <% } %>

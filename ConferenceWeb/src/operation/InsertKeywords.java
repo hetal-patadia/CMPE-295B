@@ -1,3 +1,4 @@
+//Not needed anymore
 package operation;
 
 import java.io.BufferedReader;
@@ -13,7 +14,7 @@ public class InsertKeywords {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		
+	/*	
 		String fileName = "C:/Users/VAHBHP/git/LocalConferenceRepo/ConferenceWeb/Files/uniqueKeywords.txt";
 		
 		try{
@@ -39,7 +40,7 @@ public class InsertKeywords {
 			e.printStackTrace();
 		} 
 		
-		
+		*/
 	}
 
 }

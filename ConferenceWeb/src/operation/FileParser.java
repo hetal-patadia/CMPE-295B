@@ -1,3 +1,4 @@
+//parse the crawler returned file and store it to db
 package operation;
 
 import java.io.BufferedReader;

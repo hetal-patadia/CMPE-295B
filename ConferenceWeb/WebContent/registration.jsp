@@ -10,8 +10,9 @@
     String domain1 = request.getParameter("domain1");
     String domain2 = request.getParameter("domain2");
     String domain3 = request.getParameter("domain3");
+    String interests = domain1 + ", " + domain2 + ", " + domain3;
     
-    int i = DbOperation.insertRecordIntoUserTable(fname, lname, email, user, pwd, domain1, domain2, domain3);
+    int i = DbOperation.insertRecordIntoUserTable(fname, lname, email, user, pwd, domain1, domain2, domain3, interests);
     /*
     Class.forName("com.mysql.jdbc.Driver");
     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbname",
